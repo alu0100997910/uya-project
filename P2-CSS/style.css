@@ -1,0 +1,146 @@
+    #contenedor {
+
+        width: 770px;
+        margin: 0 auto;
+    }
+
+    #cabecera {
+        height: 100px;
+        width: 770px;
+        background-image: url(http://www.lacasadelastelas.es/images/stories/virtuemart/product/blackout_gris.jpg);
+        border: 1px solid black;
+        padding: 0px;
+        text-align: center;
+        position: static;
+    }
+
+    ul {
+        list-style-type: none;
+        font-family: Arial;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+        
+    }
+    li a:hover{
+        background-color: pink;
+    }
+
+    a {
+        font-family: Arial;
+        font-size: 1.5em;
+        color: blue;
+    }
+
+    a:visited {
+        font-family: verdana;
+        color: blue;
+    }
+
+    a:hover {
+        color: red;
+    }
+
+    #contenido {
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 0.5em;
+    }
+
+    #central {
+        width: 330px;
+        margin-right: 0.2em;
+        border: 1px solid black;
+    }
+
+    img {
+        width: 100px;
+        height: 80px;
+        
+
+    }
+
+    .loremipsum {
+        font-family: Arial;
+        font-size: 1.5em;
+
+    }
+
+    .loremipsum tr td,
+    .loremipsum tr th {
+        border: 1px solid black;
+    }
+
+    .loremipsum a {
+        font-family: Arial;
+        font-size: 1.0em;
+        color: green;
+    }
+
+    p {
+        font-size: 1.5em;
+        color: black;
+        display: inline;
+    }
+
+    #izquierda {
+        width: 200px;
+        margin-right: 0.2em;
+        border: 1px solid black;
+    }
+
+    .vertical-menu {
+        display:flex;
+        flex-direction:column;
+        width: 200px;
+        padding:0.3em;
+        margin-bottom:0.7em;
+        
+    }
+
+    .vertical-menu a {
+        width:100%;
+        color: black;
+        text-decoration: none;
+        
+    }
+
+    .vertical-menu a:hover {
+        background-color: pink;
+        
+    }
+
+
+    #derecha {
+        padding-left:0.7em;
+        width: 200px;
+        margin-right: 0.2em;
+        border: 1px solid black;
+
+    }
+
+    #pie {
+        
+        height: 100px;
+        width: 770px;
+        margin-top: 0.5em;
+        border: 1px solid black;
+
+    }
+    
+    h3{
+        
+        font-family:Arial;
+        font-size:1.5em;
+        color:black;
+        
+    }
+    
