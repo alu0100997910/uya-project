@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Valdiaciones JavaScript </title>
+</head>
+<body>
+
+	<form action="" onsubmit="return validarFormulario()">
+		<h3>2.- DNI</h3>
+		<label for="dni">
+			<span>DNI:</span>
+		</label>
+		<input id="dni" name="dni" type="text" placeholder="DNI...">
+		
+		<br><br>
+
+		<input type="submit" value="Enviar">
+
+	</form>
+
+	<form action="" onsubmit="return validarFormAnadir()">
+		<h3>3.- Añadir lista</h3>
+		<label for="numplista">
+			<span>Tecleaa un número para saber marcas de coches:</span>
+		</label>
+		<input id="numplista" name="numplista" type="text" placeholder="Número...">
+		
+		<br><br>
+
+		<input type="submit" value="Añadir">
+
+	</form>
+
+	<br>
+	<br>
+	<br>
+	
+	<form action="" onsubmit="return contar()">
+		<h3>4.- Contando los enlaces de una página</h3>
+		<p>A continuación contaremos los enlaces existentes en una sección determinada.</p>
+		<ul>
+			<li><a href="https://www.facebook.com/">Facebook</a></li>
+			<li><a href="">Youtube</a></li>
+			<li>Este no es enlace</li>
+			<li><a href="">Google</a></li>
+			<li>Este tampoco es enlace</li>
+		</ul>
+		<p>El resultado correcto tendría que ser: 3 enlances.</p>
+
+		<input type="submit" value="Contar">
+	</form>
+	
+	
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	
+	<script>
+		function validarFormulario(){
+
+ 		//Variables
+ 		var txtdni = document.getElementById('dni').value;
+ 		//var txtletras = document.getElementById('letras').value;
+
+
+ 		var banderaRBTN = false;
+
+ 		//////////////////
+		//Validaciones DNI
+		//////////////////
+
+			// Validación vacío
+			if(txtdni == null || txtdni.length == 0 || /^\s+$/.test(txtdni)){
+				alert('Error: El campo del DNI esta vacío');
+				return false;
+			}
+
+			//Validacion longitud
+			if(txtdni.length < 9 || txtdni.length > 9){
+				alert('Error: El DNI no tiene la longitud correcta');
+				return false;
+			}
+
+			/////////////////////////////
+			//Validación formato correcto
+			/////////////////////////////
+
+			//Asigno variable temporal
+			var dnitemp = txtdni;
+
+			//Obtener cadena sólo de la parte numerica, primeras 8 posiciones
+			var dniSnum= dnitemp.charAt(0) + dnitemp.charAt(1) + dnitemp.charAt(2) + dnitemp.charAt(3) + dnitemp.charAt(4) + dnitemp.charAt(5) + dnitemp.charAt(6) + dnitemp.charAt(7);
+			//alert( 'Cadena nueva de sólo números: ' + dniSnum); // Imprimo de prueba
+
+
+			//Obtenego la ultima posicion de cadena, para despues validar que sea letra
+			 var dniletra = dnitemp.charAt(8).toUpperCase();
+			 //alert( 'Cadena nueva de sólo letra: ' + dniletra); // Imprimo de prueba
+
+
+			//Valido la cadena DNI de sólo numero
+			if(isNaN(dniSnum)){
+				alert('ERROR: En el DNI no tiene el formato correcto. Existen caracteres no válidos dentro de los primeros 8 caracteres, tienen que ser sólo números');
+				return false;
+			}
+			else{
+				//alert('TODO CORRECTO - SÓLO NUMEROS');
+
+				// Valido que la ultima posicion si sea letra
+				if(dniletra.match(/[A-Z]/)){
+				     alert('MENSAJE: EL DNI TIENE EL FORMATO CORRECTO');
+				     //document.getElementById('letras').value.focus();
+				     return true;
+				}
+				else{
+					alert('ERROR: En el DNI no tiene el formato correcto. Existe un caracteres no válido en la última posición');
+				}
+
+				return false;	
+			}
+
+		return true;
+	}
+
+	function validarFormAnadir(){
+
+ 		//Variables
+ 		var txtnumplista = document.getElementById('numplista').value;
+ 		
+
+ 		//Array predefinido
+ 		cars = ["BMW", "Nissan", "Citroen", "Seat", "Mazda", "Ferrari", "Lamborgini", "Renault" , "Chevrolet", "Tesla"];
+
+
+ 		// Validación vacío
+		if(txtnumplista == null || txtnumplista.length == 0 || /^\s+$/.test(txtnumplista)){
+			alert('Error: El campo del número esta vacío');
+			return false;
+		}
+
+		//Validar que sea número
+		if(isNaN(txtnumplista)){
+			alert('ERROR: El campo número, sólo puede contener números.');
+			return false;
+		}
+
+		//Validacion longitud
+		if(txtnumplista > 10  || txtnumplista == 0){
+			alert('Error: El número no puede ser mayor a 10 o igual a 0, por favor intenta de nuevo');
+			return false;
+		}
+		//alert('El número fué: ' + txtnumplista );
+
+		var cars, text, i;
+
+		
+		tda = txtnumplista;
+		text = " Las marcas de coches son: [";
+		for (i = 0; i < tda; i++) {
+			text += cars[i] + " | ";
+		}
+		text += "] ";
+
+		alert(text);
+
+
+ 		return true;
+ 	}
+
+ 	//Funcion para contar enlaces dentro de una pagina o sección
+ 	function contar(){
+ 		alert("Los enlaces encontrados en la lista son: " + $("a").size());
+ 		return true;
+ 	}
+</script>
+
+</body>
+</html>

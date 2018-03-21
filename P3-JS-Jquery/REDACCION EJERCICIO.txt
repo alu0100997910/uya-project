@@ -1,0 +1,16 @@
+1.- Realiza un esquema del árbol DOM que 
+genera el código HTML en el fichero enlazado
+
+2.- Define una función en javascript que 
+verifique detecte algún error posible en 
+la introducción de un dni en un formulario: 
+si falta la letra, si la letra es correcta, etc.
+
+3.- Realizar una función javascript que, dado 
+un formulario con un campo de texto para recoger 
+un número "n" que introduzca el usuario y un botón 
+que al hacer click añada a una lista "n" palabras 
+que pueden estar almacenadas n un array predefinido.
+
+4.- Dada la página añadir un encabezado que muestre 
+la cantidad de enlaces en la página.
