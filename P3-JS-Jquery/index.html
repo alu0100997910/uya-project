@@ -104,13 +104,27 @@
 				return false;
 			}
 			else{
-				//alert('TODO CORRECTO - SÓLO NUMEROS');
-
-				// Valido que la ultima posicion si sea letra
+				
+				// Valido que la ultima posicion sea cualquier letra
 				if(dniletra.match(/[A-Z]/)){
-				     alert('MENSAJE: EL DNI TIENE EL FORMATO CORRECTO');
-				     //document.getElementById('letras').value.focus();
-				     return true;
+				     
+				    // alert('MENSAJE: EL DNI SI TIENE UNA LETRA EN LA ULTIMA POSICION');
+				     
+				     //Valido que la letra tecleada si sea la correspondiente
+				     
+					     //ABC CORRESPONDIENTE PARA DNI
+					     var ltrabc = "TRWAGMYFPDXBNJZSQVHLCKE";
+					     //OBTENGO Y MUESTRO LA LETRA QUE TENDRÍA QUE SER LA CORRECTA
+					     var ltrcorrecta = ltrabc.charAt(dniSnum % 23);
+					     //alert('Posicion de letra correspondiente: ' + ltrcorrecta);
+
+					     if (ltrcorrecta != dniletra){
+					     	alert('MENSAJE: LA LETRA TECLEADA NO CORRESPONDE AL DNI');
+					     }
+					     else{
+					     	alert('MENSAJE: EL DNI ES TODO CORRECTO (:');
+					     }
+				     return true;				     
 				}
 				else{
 					alert('ERROR: En el DNI no tiene el formato correcto. Existe un caracteres no válido en la última posición');
