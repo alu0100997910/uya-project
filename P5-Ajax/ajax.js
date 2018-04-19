@@ -24,7 +24,7 @@ $("#petajax").click(() => {
             for (let i in data) {
                 texto += `
                     <li>
-                        <div class="collapsible-header">ID: ${data[i].id}</div>
+                        <div class="collapsible-header"><i class="tiny material-icons">dehaze</i> ID: ${data[i].id}</div>
                         <div class="collapsible-body left-align">
                             <span>ID: ${data[i].name}</span><br>
                             <span>Email: ${data[i].email}</span><br>
